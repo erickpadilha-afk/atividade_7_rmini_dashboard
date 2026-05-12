@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard Deep Rock Galactic</title>
+</head>
+<body>
+    <header class="barra-sticky"> 
+    <section class="sticky">
+        <img src="rockstone.png" width="50px" height="50px">
+        <h4 id="site-nome">Deep Rock Galactic Corporation</h4>
+    </section>
+              <section class="filtro-area">
+    <input  id="filtro" type="text" placeholder="Filtrar...">
+</section>
+
+    </header>
+
+    <main>
+        
+       
+
+        <section id="missoes" class="square filtro-item">
+                <h1 id="titulo">Missões Totais</h1> <br>
+                <h2 id="numero-missoes">90.126%</h2>
+                <h1 id="titulo">Missões Máximas Concluidas</h1> <br>
+                <h2 id="numero-missoes">60.124%</h2>
+                 <h1 id="titulo">Media de Missões Bem Sucedidas</h1> <br>
+                <h2 id="numero-missoes">66,71%</h2>
+        </section>
+
+                <section class="square filtro-item info">
+                <section class="grafico">
+                <h1 id="titulo">Personagens mais usados</h1>
+                <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6pVTKxIaGKxnnGjiP6DuGKvjTh-k3BR0Deb6t_N3DYpCCJmRGNtB1_roeExduhACGmtlW6dVWETFL/pubchart?oid=1653310113&amp;format=interactive"></iframe>
+            </section>
+        </section>
+
+                <section class="square filtro-item info">
+     <section class="grafico">
+        <h1 id="titulo">Minérios mais recolhidos</h1>
+        <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR29jYIMKuV7dt7BGx8zXyv6ykshOmty_b7eBLWPKrXvB1BFajMl2ooWIKVu9ojo6fC27FgVgAufmrC/pubchart?oid=368490103&amp;format=interactive"></iframe>
+    </section>
+        </section>
+
+        <section>
+            <script>
+    const campoFiltro = document.getElementById("filtro");
+    const itens = document.querySelectorAll(".filtro-item");
+
+    campoFiltro.addEventListener("keyup", function() {
+
+        const texto = campoFiltro.value.toLowerCase();
+
+        itens.forEach(item => {
+
+            const conteudo = item.textContent.toLowerCase();
+
+            if(conteudo.includes(texto)){
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+
+        });
+
+    });
+</script>
+        </section>
+
+        <section></section>
+            
+
+
+        <section class="square">
+    <section class="info formulario">
+
+        <h1 id="titulo">Novo Registro</h1>
+
+        <input type="text" id="nomeMissao" placeholder="Nome da missão">
+
+        <input type="number" id="quantidade" placeholder="Quantidade">
+
+        <button onclick="adicionarRegistro()">
+            Adicionar
+        </button>
+
+    </section>
+</section>
+
+<section class="square">
+    <section class="info">
+        <div id="lista-registros"></div>
+    </section>
+</section>
+
+<script src="script.js"></script>
+
+    </main>
+
+    <footer>
+
+
+
+        
+    </footer>
+</body>
+</html>
