@@ -1,109 +1,183 @@
-:root{
 
-    --fundo-grafico: #FFDF0D;
-    --borda: #E6C90C;
+
+:root {
+    --fundo-grafico: #252222;
     --titulo-cor: #C7AD0A;
+    --texto-cor: #EBCc0c;
     --fundo-sticky: #122B19;
     --fundo: #252222;
     --stiky: #EF6100;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.square{
-    display: block;
-    border: 2px solid var(--borda);
-    border-radius: 5px;
-}
-
-body{
+body {
     background-color: var(--fundo);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#missoes{
-    background-color: var(--fundo-grafico);
-    margin: 150px;
-    padding: 5px;
-}
 
-#numero-missoes{
-    margin: 20px;
-    font-size: 35px;
-}
-
-.info{
-    display: flex;
-    background-color: var(--fundo-grafico);
-    margin: 150px;
-    padding: 5px;
-}
-
-.barra-sticky{
+.barra-sticky {
     position: sticky;
     top: 0px;
+    border-bottom:  2px solid var(--stiky);
+    z-index: 1000;
     background-color: #1D1910;
     color: var(--stiky);
     text-align: left;
     font-weight: bold;
     font-size: 35px;
-    margin: -5px;
+    margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 12px;
-}
-
-.sticky{
     display: flex;
-    text-align: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#titulo{
+.sticky {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#site-nome {
+    font-size: 35px;
+}
+
+.filtro-area {
+    display: flex;
+    justify-content: center;
+}
+
+#filtro {
+    width: 400px;
+    padding: 12px;
+    background-color: #252222;
+    border: 2px solid var(--stiky);
+    border-radius: 10px;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s ;
+}
+
+#filtro:hover {
+    border-color: #fc8638;
+    box-shadow: 0 0 10px rgba(223, 105, 26, 0.5);
+}
+
+.titulo-card{
+    color: var(--texto-cor);
+}
+
+.numero-destaque{
+    color: #88791c;
+}
+
+main {
+    max-width: 1200px;
+    margin: 40px auto; 
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+}
+
+.square {
+    display: block;
+    border: 6px solid #2f3631;
+    border-top: 4px solid var(--stiky);
+    border-radius: 5px;
+    background-color: var(--fundo-grafico);
+    padding: 20px;
+    width: 100%;
+}
+
+
+#missoes {
+    padding: 20px;
+}
+
+#numero-missoes {
+    margin: 10px 0 25px 0;
+    font-size: 35px;
+}
+
+#titulo {
     font-size: 45px;
     color: var(--titulo-cor);
 }
 
-.filtro-area{
+
+.info {
     display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
 }
 
+.grafico {
+    width: 100%;
+    max-width: 640px; 
+    text-align: center;
+}
 
-#filtro{
-    width: 400px;
+.grafico iframe {
+    width: 100% !important; 
+    height: 380px; 
+    border: none;
+    background-color: white;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.formulario input {
     padding: 12px;
-    border-radius: 10px;
+    font-size: 16px;
     border: 2px solid var(--borda);
-    font-size: 18px;
+    border-radius: 5px;
     outline: none;
 }
 
-#filtro:hover{
-       animation: pulse-animation 1.2s forwards;
+.formulario button {
+    padding: 12px;
+    background-color: var(--stiky);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-@keyframes pulse-animation{
-    0% { scale: 1;}
-    100% { scale: 1.2;}
+.formulario button:hover {
+    background-color: #cc5200;
 }
 
-#lista-registros{
+#lista-registros {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    width: 100%;
 }
 
-.registro{
+.registro {
     background-color: #ffe75a;
     padding: 20px;
     border-radius: 10px;
     width: 250px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     border: 2px solid var(--borda);
 }
-
